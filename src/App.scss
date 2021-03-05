@@ -4,12 +4,26 @@
 
 @font-face {
   font-family: "Roboto Slab";
-  src: url("./fonts/RobotoSlab-Regular.eot");
-  src: url("./fonts/RobotoSlab-Regular.eot?#iefix") format("embedded-opentype"),
-    url("./fonts/RobotoSlab-Regular.woff2") format("woff2"),
-    url("./fonts/RobotoSlab-Regular.woff") format("woff"),
-    url("./fonts/RobotoSlab-Regular.ttf") format("truetype");
-  font-weight: normal;
+  src: url("./fonts/RobotoSlab-Regular/RobotoSlab-Regular.eot");
+  src: url("./fonts/RobotoSlab-Regular/RobotoSlab-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/RobotoSlab-Regular/RobotoSlab-Regular.woff2") format("woff2"),
+    url("./fonts/RobotoSlab-Regular/RobotoSlab-Regular.woff") format("woff"),
+    url("./fonts/RobotoSlab-Regular/RobotoSlab-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("./fonts/RobotoSlab-Medium/RobotoSlab-Medium.eot");
+  src: url("./fonts/RobotoSlab-Medium/RobotoSlab-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/RobotoSlab-Medium/RobotoSlab-Medium.woff2") format("woff2"),
+    url("./fonts/RobotoSlab-Medium/RobotoSlab-Medium.woff") format("woff"),
+    url("./fonts/RobotoSlab-Medium/RobotoSlab-Medium.ttf") format("truetype");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
