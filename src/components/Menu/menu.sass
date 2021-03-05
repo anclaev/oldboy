@@ -1,0 +1,50 @@
+.menu
+    &-list
+        &-item
+            margin-bottom: 20px
+
+            &__icon, &__text
+                cursor: pointer
+
+            &__icon
+                width: 10px
+                height: 10px
+
+            &__text
+                margin-left: 10px
+                font-size: 14px
+                transition: 0.2s
+
+                &:hover
+                    color: #5773FF
+
+            &:first-child
+                color: #5773FF
+
+            &:last-child
+                margin-bottom: 0
+
+@media (max-width: 790px)
+    .menu
+        padding: 0
+        background: none
+
+        &__title
+            display: none
+
+        &-list
+            display: flex
+            justify-content: space-around
+
+            &-item
+                margin-bottom: 0
+
+                &__icon
+                    display: none
+
+                &__text
+                    margin: 0
+
+@media (max-width: 500px)
+    .menu
+        padding: 20px 0
