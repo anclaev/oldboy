@@ -1,4 +1,4 @@
-import "./profile.scss";
+import s from "./profile.module.scss";
 
 import Pic from "../Pic";
 import Feature from "../Feature";
@@ -6,19 +6,14 @@ import Icon from "../Icons";
 import Post from "../Post";
 
 const Profile = () => (
-  <div className="profile">
-    <Pic className="profile__bg" img="profile-bg.jpg" />
-    <Pic
-      className="profile__ava"
-      img="profile-ava.jpg"
-      width="100px"
-      height="100px"
-    />
-    <div className="profile-info card">
-      <div className="profile-info__name">Artem Samarin</div>
-      <div className="profile-info-props">
+  <div className={s.profile}>
+    <Pic className={s.bg} img="profile-bg.jpg" />
+    <Pic className={s.ava} img="profile-ava.jpg" />
+    <div className={s.info}>
+      <div className={s.name}>Artem Samarin</div>
+      <div className={s.props}>
         <Feature
-          className="profile-info-props-item"
+          className={s.props__item}
           data={[
             ["Tort", "12.10.2001"],
             ["City", "Samara"],
@@ -28,25 +23,25 @@ const Profile = () => (
         />
       </div>
     </div>
-    <div className="profile-posts">
+    <div className={s.posts}>
       <input
-        className="profile-posts-new__text"
+        className={s.new__text}
         type="text"
         placeholder="How are you, old boy?"
       />
 
-      <button className="profile-posts-new-send">
-        <Icon className="profile-posts-new-send__icon" name="Send" />
+      <button className={s.send}>
+        <Icon className={s.icon} name="Send" />
       </button>
 
-      <div className="profile-posts-wrapper">
+      <div className={s.wrapper}>
         <Post
-          className="profile-posts-item"
+          className={s.posts__item}
           text="How stupid that is."
           time="March 4, 19:35"
         />
         <Post
-          className="profile-posts-item"
+          className={s.posts__item}
           text="Hey, what are you doing?!"
           time="March 4, 19:37"
         />

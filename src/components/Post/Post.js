@@ -1,17 +1,12 @@
-import "./post.sass";
+import s from "./post.module.sass";
 
 import Pic from "../Pic";
 
 const Post = (props) => (
-  <div className={`${props.className} post`}>
-    <Pic
-      className={`${props.className}__pic post__pic`}
-      img="profile-ava.jpg"
-      width="40px"
-      height="40px"
-    />
-    <span className={`${props.className}__text post__text`}>{props.text}</span>
-    <span className={`${props.className}__time post__time`}>{props.time}</span>
+  <div className={`${props.className} ${s.post}`}>
+    <Pic className={s.pic} img="profile-ava.jpg" />
+    <span className={s.text}>{props.text}</span>
+    <span className={s.time}>{props.time}</span>
   </div>
 );
 

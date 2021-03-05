@@ -1,18 +1,13 @@
-import "./feature.sass";
+import s from "./feature.module.sass";
 
 import Icon from "../Icons";
 
 const Feature = (props) =>
   props.data.map((item) => {
     return (
-      <div className={`${props.className} feature`}>
-        <span className={`${props.className}__text feature__text`}>
-          {item[1]}
-        </span>
-        <Icon
-          className={`${props.className}__icon feature__icon`}
-          name={`${item[0]}`}
-        />
+      <div className={`${props.className} ${s.feature}`}>
+        <span className={s.text}>{item[1]}</span>
+        <Icon className={s.icon} name={`${item[0]}`} />
       </div>
     );
   });
