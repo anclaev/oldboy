@@ -1,4 +1,4 @@
-import s from "./profile.module.scss";
+import s from "./me.module.scss";
 
 import Pic from "../Pic";
 import Feature from "../Feature";
@@ -8,8 +8,8 @@ import Post from "../Post";
 import Textbox from "../Textbox";
 import SendButton from "../SendButton";
 
-const Profile = () => (
-  <div className={s.profile}>
+const Me = () => (
+  <div className={s.me}>
     <Pic className={s.bg} img="profile-bg.jpg" />
     <Pic className={s.ava} img="profile-ava.jpg" />
     <div className={s.info}>
@@ -47,4 +47,4 @@ const Profile = () => (
   </div>
 );
 
-export default Profile;
+export default Me;

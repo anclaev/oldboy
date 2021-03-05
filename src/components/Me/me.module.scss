@@ -1,4 +1,4 @@
-.profile {
+.me {
   grid-area: c;
 
   display: grid;
@@ -101,7 +101,7 @@
 }
 
 @media (max-width: 950px) {
-  .profile {
+  .me {
     grid-template-areas:
       "bg bg"
       "ava info"
@@ -122,14 +122,14 @@
 }
 
 @media (max-width: 790px) {
-  .profile,
+  .me,
   .posts {
     grid-gap: 40px;
   }
 }
 
 @media (max-width: 640px) {
-  .profile {
+  .me {
     grid-template-areas:
       "ava bg"
       "info info"
@@ -143,12 +143,12 @@
 }
 
 @media (max-width: 500px) {
-  .profile,
+  .me,
   .posts {
     grid-gap: 20px;
   }
 
-  .profile {
+  .me {
     grid-template-rows: 1fr auto auto;
   }
 
@@ -187,7 +187,7 @@
 }
 
 @media (max-width: 320px) {
-  .profile {
+  .me {
     grid-template-areas:
       "ava ava"
       "info info"
