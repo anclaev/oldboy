@@ -1,6 +1,7 @@
 import s from "./menu.module.sass";
 
 import Icon from "../Icons";
+import { NavLink } from "react-router-dom";
 
 const Menu = (props) => (
   <div className={s.menu}>
@@ -9,9 +10,13 @@ const Menu = (props) => (
       {props.items.map((item) => (
         <div className={s.item}>
           <Icon name={item} className={s.icon} />
-          <a href={`/${item.toLowerCase()}`} className={s.text}>
+          <NavLink
+            to={`/${item.toLowerCase()}`}
+            className={s.text}
+            activeClassName={s.active}
+          >
             {item}
-          </a>
+          </NavLink>
         </div>
       ))}
     </div>
