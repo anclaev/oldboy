@@ -21,3 +21,20 @@
   display: block;
   font-size: 24px;
 }
+
+@media (max-width: 790px) {
+  .title {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .messages {
+    grid-template-areas:
+      "title title"
+      "contacts contacts"
+      "chat chat";
+
+    grid-gap: 0;
+  }
+}

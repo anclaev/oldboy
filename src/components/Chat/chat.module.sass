@@ -30,3 +30,24 @@
         flex-grow: 1
         margin-right: 20px
         width: 70%
+
+@media (max-width: 700px)
+    .chat
+        margin-top: 60px
+
+@media (max-width: 420px)
+    .chat
+        max-height: 100vh
+
+    .new
+        margin-top: 60px
+        flex-direction: column
+        height: auto
+
+        & input[type="text"]
+            width: 100%
+            font-size: 12px
+
+        & button
+            margin: 0 auto
+            margin-top: 20px
