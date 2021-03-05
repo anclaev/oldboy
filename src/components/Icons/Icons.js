@@ -1,15 +1,15 @@
 import React from "react";
 import IconsSVG from "./icons.svg";
 
-const Icons = ({ name, color, size, className }) => (
+const Icons = (props) => (
   <svg
-    className={`${className}`}
-    fill={color}
-    stroke={color}
-    width={size}
-    height={size}
+    className={`${props.className}`}
+    fill={props.color}
+    stroke={props.color}
+    width={props.size}
+    height={props.size}
   >
-    <use xlinkHref={`${IconsSVG}#${name}`} />
+    <use xlinkHref={`${IconsSVG}#${props.name}`} />
   </svg>
 );
 
