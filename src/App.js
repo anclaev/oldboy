@@ -3,7 +3,7 @@ import "./App.scss";
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import Friends from "./components/Friends";
-//import Profile from "./components/Profile";
+// import Profile from "./components/Profile";
 import Messages from "./components/Messages";
 
 const App = () => (
