@@ -5,8 +5,6 @@ import Menu from "../Menu";
 import Friends from "../Friends";
 import Content from "../Content";
 
-import Profile from "../Profile";
-
 const App = () => (
   <div className="app-wrapper">
     <Header title="Old Boy" />
