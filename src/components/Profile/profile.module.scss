@@ -67,23 +67,12 @@
   grid-gap: 20px;
 }
 
-.new__text {
+.posts input[type="text"] {
   grid-area: txt;
 }
 
-.send {
+.posts button {
   grid-area: send;
-  border-radius: 50px;
-  transition: 0.3s;
-}
-
-.send:hover {
-  background-color: #5773ff;
-}
-
-.icon {
-  width: 20px;
-  height: 20px;
 }
 
 .wrapper {
@@ -167,12 +156,6 @@
 
   .wrapper {
     margin-top: 20px;
-  }
-
-  .send {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto;
   }
 
   .posts__item {

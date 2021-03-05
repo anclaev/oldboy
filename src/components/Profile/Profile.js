@@ -2,8 +2,11 @@ import s from "./profile.module.scss";
 
 import Pic from "../Pic";
 import Feature from "../Feature";
-import Icon from "../Icons";
+
 import Post from "../Post";
+
+import Textbox from "../Textbox";
+import SendButton from "../SendButton";
 
 const Profile = () => (
   <div className={s.profile}>
@@ -17,22 +20,16 @@ const Profile = () => (
           data={[
             ["Tort", "12.10.2001"],
             ["City", "Samara"],
-            ["Edu", "CMaE"],
+            ["Edu", "CME"],
             ["Web", "ancla.dev"],
           ]}
         />
       </div>
     </div>
     <div className={s.posts}>
-      <input
-        className={s.new__text}
-        type="text"
-        placeholder="How are you, old boy?"
-      />
+      <Textbox placeholder="How are you, old boy?" />
 
-      <button className={s.send}>
-        <Icon className={s.icon} name="Send" />
-      </button>
+      <SendButton />
 
       <div className={s.wrapper}>
         <Post

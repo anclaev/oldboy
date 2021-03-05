@@ -23,17 +23,6 @@ body {
   margin: 0 40px;
 }
 
-input[type="text"] {
-  padding: 10px 20px;
-  border-radius: 50px;
-  font-size: 14px;
-}
-
-input[type="text"]::placeholder {
-  color: #8e8e8e;
-}
-
-input[type="text"],
 button {
   background-color: #18181d;
   color: #fff;
@@ -43,9 +32,7 @@ button {
   outline: none;
 
   font-family: "Roboto Slab", sans-serif;
-}
 
-button {
   cursor: pointer;
 }
 
@@ -59,21 +46,6 @@ button {
   grid-template-columns: 250px 1fr;
   grid-gap: 20px;
 }
-
-// .card {
-//   background-color: #18181d;
-//   border-radius: 20px;
-//   padding: 20px;
-// }
-
-// .card__title {
-//   font-size: 10px;
-//   text-transform: uppercase;
-//   color: #a7a7a7;
-
-//   display: block;
-//   margin-bottom: 20px;
-// }
 
 @media (max-width: 950px) {
   .app-wrapper {
