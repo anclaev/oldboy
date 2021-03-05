@@ -39,7 +39,7 @@ const Profile = () => (
         />
         <Post
           className={s.posts__item}
-          text="Hey, what are you doing?!"
+          text="Hey, what are you doing?"
           time="March 4, 19:37"
         />
       </div>
