@@ -1,5 +1,39 @@
 import s from "./chat.module.sass";
 
-const Chat = () => <div className={s.chat}>Это чат!</div>;
+import ChatMessage from "../ChatMessage";
+import Textbox from "../Textbox";
+import SendButton from "../SendButton";
+
+const Chat = () => (
+  <div className={s.chat}>
+    <div className={s.wrapper}>
+      <ChatMessage text="Hi, whats up?" time="20:35" pos="l" />
+      <ChatMessage
+        text="Not bad. Got a job. How are you?"
+        time="20:37"
+        pos="r"
+      />
+      <ChatMessage
+        text="Very good! I'm getting married soon! You're invited!"
+        time="20:40"
+        pos="l"
+      />
+      <ChatMessage
+        text="Wow, cool! When will the wedding be?"
+        time="20:45"
+        pos="r"
+      />
+      <ChatMessage
+        text="March 17, 12:00, Yekaterinburg. The dress code is a white tie."
+        time="21:00"
+        pos="l"
+      />
+    </div>
+    <div className={s.new}>
+      <Textbox placeholder="Send Sasha a new message..." />
+      <SendButton />
+    </div>
+  </div>
+);
 
 export default Chat;

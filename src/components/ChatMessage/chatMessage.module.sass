@@ -1,0 +1,89 @@
+.wrapper
+    display: flex
+    margin-bottom: 20px
+
+    &:last-child
+        margin-bottom: 0
+
+.wl
+    justify-content: flex-start
+
+.wr
+    justify-content: flex-end
+
+.msg
+    display: flex
+
+    position: relative
+
+    border-radius: 30px
+
+    padding: 10px 20px 5px 20px
+    max-width: calc(50% - 10px)
+
+    &::before
+        z-index: -1
+
+        position: absolute
+        bottom: 0
+
+        display: block
+        content: ""
+
+        border: 20px solid transparent
+        border-radius: 2px
+
+.l
+    margin-left: 10px
+
+    background: #fff
+    color: #000
+
+    &::before
+        left: -10px
+
+        border-right: 20px solid #fff
+        border-bottom: 20px solid #fff
+        border-radius: 2px
+
+.r
+    margin-right: 10px
+
+    background: #5773FF
+
+    &::before
+        left: calc(100% - 30px)
+
+        border-left: 20px solid #5773FF
+        border-bottom: 20px solid #5773FF
+
+.text
+    color: #000
+
+    font-size: 14px
+    line-height: 150%
+
+    margin-bottom: 5px
+
+.l .text
+    color: #000
+    font-weight: 500
+
+.r .text
+    color: #fff
+    font-weight: 400
+
+.time
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+
+    font-size: 10px
+
+    margin-left: 10px
+
+.l .time
+    color: #A7A7A7
+
+.r .time
+    color: rgba(255,255,255,0.5)
