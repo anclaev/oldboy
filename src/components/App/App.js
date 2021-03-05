@@ -8,7 +8,7 @@ import Content from "../Content";
 const App = () => (
   <div className="app-wrapper">
     <Header title="Old Boy" />
-    <Menu className="menu" items={["Me", "Messages", "News", "Music"]} />
+    <Menu items={["Me", "Messages", "News", "Music"]} />
     <Friends className="friends" humans={["Andrew", "Anna", "Oleg", "Sasha"]} />
     <Content />
   </div>
