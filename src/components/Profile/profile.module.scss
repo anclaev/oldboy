@@ -60,19 +60,24 @@
 
   display: grid;
   grid-template-areas:
-    "txt send"
+    "new new"
     "wrapper wrapper";
   grid-template-columns: 1fr 50px;
   grid-template-rows: 50px auto;
   grid-gap: 20px;
 }
 
-.posts input[type="text"] {
-  grid-area: txt;
+.new {
+  grid-area: new;
+
+  display: flex;
+  justify-content: space-between;
 }
 
-.posts button {
-  grid-area: send;
+.new input[type="text"] {
+  flex-grow: 1;
+  margin-right: 20px;
+  width: 70%;
 }
 
 .wrapper {
@@ -147,11 +152,8 @@
     grid-template-rows: 1fr auto auto;
   }
 
-  .posts {
-    grid-template-areas:
-      "txt txt"
-      "send send"
-      "wrapper wrapper";
+  .new input[type="text"] {
+    font-size: 12px;
   }
 
   .wrapper {

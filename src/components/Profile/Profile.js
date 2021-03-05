@@ -27,10 +27,10 @@ const Profile = () => (
       </div>
     </div>
     <div className={s.posts}>
-      <Textbox placeholder="How are you, old boy?" />
-
-      <SendButton />
-
+      <div className={s.new}>
+        <Textbox placeholder="How are you, old boy?" />
+        <SendButton />
+      </div>
       <div className={s.wrapper}>
         <Post
           className={s.posts__item}
