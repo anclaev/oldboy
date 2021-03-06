@@ -1,6 +1,6 @@
 import s from "./chat.module.sass";
 
-import ChatMessage from "../ChatMessage";
+import ChatMessage from "./ChatMessage";
 import Textbox from "../Textbox";
 import SendButton from "../SendButton";
 

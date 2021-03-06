@@ -1,6 +1,6 @@
 import s from "./contacts.module.sass";
 
-import Human from "../Human";
+import Human from "./Human";
 
 let Humans = [
   { id: 1, name: "Andrew Hardman", ava: "andrew", status: "online" },
