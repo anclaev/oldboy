@@ -8,6 +8,11 @@ import Post from "../Post";
 import Textbox from "../Textbox";
 import SendButton from "../SendButton";
 
+const Posts = [
+  { id: 1, text: "How stupid that is.", time: "March 4, 19:35" },
+  { id: 2, text: "Hey, what are you doing?", time: "March 4, 19:37" },
+];
+
 const Me = () => (
   <div className={s.me}>
     <Pic className={s.bg} img="profile-bg.jpg" />

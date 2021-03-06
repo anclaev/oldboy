@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const Human = (props) => (
   <NavLink
-    to={`/messages/${props.ava}`}
+    to={`/messages/${props.id}`}
     activeClassName={s.active}
     className={s.nav}
   >
