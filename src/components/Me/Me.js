@@ -8,10 +8,14 @@ import Post from "../Post";
 import Textbox from "../Textbox";
 import SendButton from "../SendButton";
 
-const Posts = [
+let Posts = [
   { id: 1, text: "How stupid that is.", time: "March 4, 19:35" },
   { id: 2, text: "Hey, what are you doing?", time: "March 4, 19:37" },
 ];
+
+let PostsEl = Posts.map((el) => (
+  <Post className={s.posts__item} text={el.text} time={el.time} />
+));
 
 const Me = () => (
   <div className={s.me}>
@@ -36,18 +40,7 @@ const Me = () => (
         <Textbox placeholder="How are you, old boy?" />
         <SendButton />
       </div>
-      <div className={s.wrapper}>
-        <Post
-          className={s.posts__item}
-          text="How stupid that is."
-          time="March 4, 19:35"
-        />
-        <Post
-          className={s.posts__item}
-          text="Hey, what are you doing?"
-          time="March 4, 19:37"
-        />
-      </div>
+      <div className={s.wrapper}>{PostsEl}</div>
     </div>
   </div>
 );
