@@ -15,7 +15,7 @@ const Friends = (props) => (
           }`}
         >
           <img
-            src={`imgs/${human.toLowerCase()}.png`}
+            src={`../imgs/${human.toLowerCase()}.png`}
             alt={`Human: ${human}`}
             className={s.ava}
           />

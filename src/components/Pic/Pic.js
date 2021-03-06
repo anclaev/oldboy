@@ -8,7 +8,7 @@ const Pic = (props) => {
     <div
       className={classes}
       style={{
-        backgroundImage: `url("imgs/${props.img}")`,
+        backgroundImage: `url("../imgs/${props.img}")`,
         height: props.height,
         width: props.width,
       }}
