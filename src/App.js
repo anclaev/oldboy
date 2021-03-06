@@ -3,8 +3,8 @@ import { Route, BrowserRouter } from "react-router-dom";
 import "./App.scss";
 
 import Header from "./components/Header";
-import Menu from "./components/Menu";
-import Friends from "./components/Friends";
+import Menu from "./components/Sidebar/Menu";
+import Friends from "./components/Sidebar/Friends";
 
 import Me from "./components/Me";
 import Messages from "./components/Messages";

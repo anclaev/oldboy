@@ -1,9 +1,9 @@
 import s from "./me.module.scss";
 
 import Pic from "../Pic";
-import Feature from "../Feature";
+import Feature from "./Feature";
 
-import Post from "../Post";
+import Post from "./Post";
 
 import Textbox from "../Textbox";
 import SendButton from "../SendButton";

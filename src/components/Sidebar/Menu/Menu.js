@@ -1,6 +1,6 @@
 import s from "./menu.module.sass";
 
-import Icon from "../Icons";
+import Icon from "../../Icons";
 import { NavLink } from "react-router-dom";
 
 const Menu = (props) => (

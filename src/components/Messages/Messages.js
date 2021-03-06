@@ -1,7 +1,7 @@
 import s from "./messages.module.scss";
 
-import Contacts from "../Contacts";
-import Chat from "../Chat";
+import Contacts from "./Contacts";
+import Chat from "./Chat";
 
 const Messages = () => (
   <div className={s.messages}>

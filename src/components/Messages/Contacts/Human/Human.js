@@ -1,6 +1,6 @@
 import s from "./human.module.sass";
 
-import Pic from "../../Pic";
+import Pic from "../../../Pic";
 import { NavLink } from "react-router-dom";
 
 const Human = (props) => (
