@@ -1,6 +1,6 @@
 import s from "./header.module.sass";
 
-import Icon from "../Icons";
+import Icon from "../Elems/Icons";
 import { NavLink } from "react-router-dom";
 
 const Header = (props) => (

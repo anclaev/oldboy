@@ -1,12 +1,12 @@
 import s from "./me.module.scss";
 
-import Pic from "../Pic";
+import Pic from "../Elems/Pic";
 import Feature from "./Feature";
 
 import Post from "./Post";
 
-import Textbox from "../Textbox";
-import SendButton from "../SendButton";
+import Textbox from "../Elems/Textbox";
+import SendButton from "../Elems/SendButton";
 
 let Posts = [
   { id: 1, text: "How stupid that is.", time: "March 4, 19:35" },

@@ -1,6 +1,6 @@
 import s from "./post.module.sass";
 
-import Pic from "../../Pic";
+import Pic from "../../Elems/Pic";
 
 const Post = (props) => (
   <div className={`${props.className} ${s.post}`}>

@@ -1,6 +1,6 @@
 import s from "./feature.module.sass";
 
-import Icon from "../../Icons";
+import Icon from "../../Elems/Icons";
 
 const Feature = (props) =>
   props.data.map((item) => {

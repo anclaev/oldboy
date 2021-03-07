@@ -1,8 +1,8 @@
 import s from "./chat.module.sass";
 
 import ChatMessage from "./ChatMessage";
-import Textbox from "../../Textbox";
-import SendButton from "../../SendButton";
+import Textbox from "../../Elems/Textbox";
+import SendButton from "../../Elems/SendButton";
 
 let Messages = [
   { text: "Hi, whats up?", time: "20:35", pos: "l", humanID: "1" },
