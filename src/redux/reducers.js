@@ -5,6 +5,8 @@ const ADD_MESSAGE = "ADD-MESSAGE";
 const UPDATE_NEW_POST = "UPDATE-NEW-POST";
 const UPDATE_NEW_MESSAGE = "UPDATE-NEW-MESSAGE";
 
+// Reducers
+
 export const postsReducer = (state, action) => {
   switch (action.type) {
     case ADD_POST:
@@ -52,3 +54,19 @@ export const messagesReducer = (state, action) => {
       return state;
   }
 };
+
+// Creators
+
+export const addPostCreator = () => ({ type: ADD_POST });
+
+export const updatePostCreator = (text) => ({
+  type: UPDATE_NEW_POST,
+  newPost: text,
+});
+
+export const addMessageCreator = () => ({ type: ADD_MESSAGE });
+
+export const updateMessageCreator = (text) => ({
+  type: UPDATE_NEW_MESSAGE,
+  newMessage: text,
+});

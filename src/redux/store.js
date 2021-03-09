@@ -90,18 +90,4 @@ let store = {
   },
 };
 
-export const addPostCreator = () => ({ type: "ADD-POST" });
-
-export const updatePostCreator = (text) => ({
-  type: "UPDATE-NEW-POST",
-  newPost: text,
-});
-
-export const addMessageCreator = () => ({ type: "ADD-MESSAGE" });
-
-export const updateMessageCreator = (text) => ({
-  type: "UPDATE-NEW-MESSAGE",
-  newMessage: text,
-});
-
 export default store;

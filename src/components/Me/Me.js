@@ -9,7 +9,7 @@ import Post from "./Post";
 import Textbox from "../Elems/Textbox";
 import SendButton from "../Elems/SendButton";
 
-import { addPostCreator, updatePostCreator } from "../../redux/state";
+import { addPostCreator, updatePostCreator } from "../../redux/reducers";
 
 const Me = (props) => {
   let posts = props.posts.map((el) => (

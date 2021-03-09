@@ -5,7 +5,10 @@ import ChatMessage from "./ChatMessage";
 import Textbox from "../../Elems/Textbox";
 import SendButton from "../../Elems/SendButton";
 
-import { updateMessageCreator, addMessageCreator } from "../../../redux/state";
+import {
+  updateMessageCreator,
+  addMessageCreator,
+} from "../../../redux/reducers";
 
 const Chat = (props) => {
   let messages = props.messages.map((el) => (
