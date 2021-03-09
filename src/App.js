@@ -15,7 +15,14 @@ const App = (props) => (
       <Sidebar className="sidebar" humans={props.state.humans} />
       <Route
         path="/me"
-        render={() => <Me posts={props.state.posts} addPost={props.addPost} />}
+        render={() => (
+          <Me
+            posts={props.state.posts}
+            newPost={props.state.newPostText}
+            addPost={props.addPost}
+            changePost={props.changePost}
+          />
+        )}
       />
       <Route
         path="/messages"

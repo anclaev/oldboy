@@ -21,8 +21,12 @@ const Me = (props) => {
 
     if (text !== "") {
       props.addPost(text);
-      postText.current.value = "";
+      props.changePost("");
     }
+  };
+
+  let ChangePost = () => {
+    props.changePost();
   };
 
   return (
@@ -45,7 +49,12 @@ const Me = (props) => {
       </div>
       <div className={s.posts}>
         <div className={s.new}>
-          <Textbox placeholder="How are you, old boy?" refVal={postText} />
+          <Textbox
+            placeholder="How are you, old boy?"
+            refVal={postText}
+            defVal={props.newPost}
+            change={ChangePost}
+          />
           <SendButton click={AddPost} />
         </div>
         <div className={s.wrapper}>{posts}</div>

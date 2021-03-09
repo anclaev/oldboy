@@ -6,6 +6,8 @@ const Textbox = (props) => (
     type="text"
     placeholder={props.placeholder}
     ref={props.refVal}
+    value={props.defVal}
+    onChange={props.change}
   />
 );
 

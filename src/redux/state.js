@@ -1,4 +1,4 @@
-import render from "../render";
+let render = () => {};
 
 const Coin = () =>
   Math.floor(Math.random() * Math.floor(2)) === 0 ? true : false;
@@ -69,6 +69,7 @@ let state = {
       humanID: "1",
     },
   ],
+  newPostText: "",
 };
 
 export const AddPost = (postMessage) => {
@@ -84,6 +85,16 @@ export const AddPost = (postMessage) => {
   state.posts.push(newPost);
 
   render(state);
+};
+
+export const ChangePost = (postValue) => {
+  state.newPostText = postValue;
+
+  render(state);
+};
+
+export const Subscribe = (observer) => {
+  render = observer; 
 };
 
 export default state;
