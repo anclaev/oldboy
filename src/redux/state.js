@@ -1,3 +1,5 @@
+import render from "../render";
+
 const Coin = () =>
   Math.floor(Math.random() * Math.floor(2)) === 0 ? true : false;
 
@@ -80,6 +82,8 @@ export const AddPost = (postMessage) => {
   };
 
   state.posts.push(newPost);
+
+  render(state);
 };
 
 export default state;
