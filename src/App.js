@@ -18,7 +18,7 @@ const App = (props) => (
         render={() => (
           <Me
             posts={props.state.posts}
-            newPost={props.state.newPostText}
+            newPost={props.state.newPost}
             addPost={props.addPost}
             changePost={props.changePost}
           />

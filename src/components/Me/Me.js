@@ -21,12 +21,12 @@ const Me = (props) => {
 
     if (text !== "") {
       props.addPost(text);
-      props.changePost("");
     }
   };
 
   let ChangePost = () => {
-    props.changePost();
+    let text = postText.current.value.replace(/\s+/g, " ").trim();
+    props.changePost(text);
   };
 
   return (
