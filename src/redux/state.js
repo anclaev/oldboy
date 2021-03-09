@@ -1,44 +1,5 @@
-const Coin = () =>
-  Math.floor(Math.random() * Math.floor(2)) === 0 ? true : false;
-
-const ADD_POST = "ADD-POST";
-const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_NEW_POST = "UPDATE-NEW-POST";
-const UPDATE_NEW_MESSAGE = "UPDATE-NEW-MESSAGE";
-
-const Months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
-const currentTime = () => {
-  let date = new Date();
-
-  let currentHours =
-    date.getHours() <= 9 ? "0" + date.getHours() : date.getHours();
-  let currentMinutes =
-    date.getMinutes() <= 9 ? "0" + date.getMinutes() : date.getMinutes();
-
-  return currentHours + ":" + currentMinutes;
-};
-
-const currentDate = () => {
-  let date = new Date();
-  let currentMonth = Months[date.getMonth()];
-  let currentDay = date.getDate();
-
-  return currentMonth + " " + currentDay + ", " + currentTime();
-};
+import { Coin } from "../functions";
+import { postsReducer, messagesReducer } from "./reducers";
 
 let store = {
   _state: {
@@ -122,64 +83,24 @@ let store = {
   },
 
   dispatch(action) {
-    switch (action.type) {
-      case ADD_POST:
-        {
-          let newPost = {
-            id: 5,
-            text: this._state.newPost.replace(/\s+/g, " ").trim(),
-            time: currentDate(),
-          };
+    this._state = postsReducer(this._state, action);
+    this._state = messagesReducer(this._state, action);
 
-          this._state.posts.push(newPost);
-          this._state.newPost = "";
-          this._callSubscriber(this._state);
-        }
-        break;
-
-      case ADD_MESSAGE:
-        {
-          let newMessage = {
-            text: this._state.newMessage,
-            time: currentTime(),
-            pos: "r",
-            humanID: "2",
-          };
-
-          this._state.messages.push(newMessage);
-          this._state.newMessage = "";
-
-          this._callSubscriber(this._state);
-        }
-        break;
-
-      case UPDATE_NEW_POST:
-        this._state.newPost = action.newPost;
-        this._callSubscriber(this._state);
-        break;
-
-      case UPDATE_NEW_MESSAGE:
-        this._state.newMessage = action.newMessage;
-        this._callSubscriber(this._state);
-        break;
-
-      default:
-        break;
-    }
+    this._callSubscriber(this._state);
   },
 };
 
-export const addPostCreator = () => ({ type: ADD_POST });
+export const addPostCreator = () => ({ type: "ADD-POST" });
 
 export const updatePostCreator = (text) => ({
-  type: UPDATE_NEW_POST,
+  type: "UPDATE-NEW-POST",
   newPost: text,
 });
 
-export const addMessageCreator = () => ({ type: ADD_MESSAGE });
+export const addMessageCreator = () => ({ type: "ADD-MESSAGE" });
 
 export const updateMessageCreator = (text) => ({
-  type: UPDATE_NEW_MESSAGE,
+  type: "UPDATE-NEW-MESSAGE",
   newMessage: text,
 });
 
