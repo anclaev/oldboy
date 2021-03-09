@@ -70,31 +70,34 @@ let store = {
     ],
     newPost: "",
   },
+  _callSubscriber() {},
+
   getState() {
     return this._state;
-  },
-  addPost() {
-    let date = new Date();
-    let postTime = date.getHours() + ":" + date.getMinutes();
-
-    let newPost = {
-      id: 5,
-      text: this._state.newPost,
-      time: postTime,
-    };
-
-    this._state.posts.push(newPost);
-    this._state.newPost = "";
-    this._callSubscriber(this._state);
-  },
-  changePost(val) {
-    this._state.newPost = val;
-    this._callSubscriber(this._state);
   },
   subscribe(observer) {
     this._callSubscriber = observer;
   },
-  _callSubscriber() {},
+
+  dispatch(action) {
+    if (action.type === "ADD-POST") {
+      let date = new Date();
+      let postTime = date.getHours() + ":" + date.getMinutes();
+
+      let newPost = {
+        id: 5,
+        text: this._state.newPost.replace(/\s+/g, " ").trim(),
+        time: postTime,
+      };
+
+      this._state.posts.push(newPost);
+      this._state.newPost = "";
+      this._callSubscriber(this._state);
+    } else if (action.type === "UPDATE-NEW-POST") {
+      this._state.newPost = action.newPost;
+      this._callSubscriber(this._state);
+    }
+  },
 };
 
 export default store;

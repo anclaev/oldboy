@@ -14,19 +14,17 @@ const Me = (props) => {
     <Post className={s.posts__item} text={el.text} time={el.time} />
   ));
 
-  let postText = React.createRef();
+  const newPost = React.createRef();
 
-  let AddPost = () => {
-    let text = postText.current.value.replace(/\s+/g, " ").trim();
-
-    if (text !== "") {
-      props.addPost(text);
+  const addPost = () => {
+    if (props.newPost.replace(/\s+/g, " ").trim() !== "") {
+      props.dispatch({ type: "ADD-POST" });
     }
   };
 
-  let ChangePost = () => {
-    let text = postText.current.value.replace(/\s+/g, " ").trim();
-    props.changePost(text);
+  const changePost = () => {
+    let text = newPost.current.value; 
+    props.dispatch({ type: "UPDATE-NEW-POST", newPost: text });
   };
 
   return (
@@ -51,11 +49,11 @@ const Me = (props) => {
         <div className={s.new}>
           <Textbox
             placeholder="How are you, old boy?"
-            refVal={postText}
+            refVal={newPost}
             defVal={props.newPost}
-            change={ChangePost}
+            change={changePost}
           />
-          <SendButton click={AddPost} />
+          <SendButton click={addPost} />
         </div>
         <div className={s.wrapper}>{posts}</div>
       </div>

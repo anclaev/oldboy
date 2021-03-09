@@ -19,8 +19,7 @@ const App = (props) => (
           <Me
             posts={props.state.posts}
             newPost={props.state.newPost}
-            addPost={props.addPost}
-            changePost={props.changePost}
+            dispatch={props.dispatch}
           />
         )}
       />
