@@ -16,17 +16,17 @@ export const postsReducer = (state, action) => {
 
       state.posts.push(newPost);
       state.newPost = "";
-      break;
+
+      return state;
 
     case UPDATE_NEW_POST:
       state.newPost = action.newPost;
-      break;
+
+      return state;
 
     default:
-      break;
+      return state;
   }
-
-  return state;
 };
 
 export const messagesReducer = (state, action) => {
@@ -42,14 +42,13 @@ export const messagesReducer = (state, action) => {
       state.messages.push(newMessage);
       state.newMessage = "";
 
-      break;
+      return state;
 
     case UPDATE_NEW_MESSAGE:
       state.newMessage = action.newMessage;
-      break;
+      return state;
 
     default:
-      break;
+      return state;
   }
-  return state;
 };
