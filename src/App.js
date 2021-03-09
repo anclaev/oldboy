@@ -14,15 +14,15 @@ const App = (props) => (
     <div className="app-wrapper">
       <Header title="Old Boy" />
       <Menu items={["Me", "Messages", "News", "Music"]} />
-      <Friends className="friends" humans={props.data.humans} />
+      <Friends className="friends" humans={props.state.humans} />
 
-      <Route path="/me" render={() => <Me posts={props.data.posts} />} />
+      <Route path="/me" render={() => <Me posts={props.state.posts} />} />
       <Route
         path="/messages"
         render={() => (
           <Messages
-            contacts={props.data.humans}
-            messages={props.data.messages}
+            contacts={props.state.humans}
+            messages={props.state.messages}
           />
         )}
       />
