@@ -2,10 +2,6 @@ import s from "./friends.module.sass";
 
 import Pic from "../../Elems/Pic";
 
-const Random = (max) => Math.floor(Math.random() * Math.floor(max));
-
-const Coin = () => (Random(2) === 0 ? true : false);
-
 const Friends = (props) => (
   <div className={s.friends}>
     <div className={s.title}>Friends</div>
@@ -13,11 +9,11 @@ const Friends = (props) => (
       {props.humans.map((human) => (
         <div className={s.human}>
           <Pic
-            img={`${human.toLowerCase()}.png`}
+            img={`${human.name.toLowerCase()}.png`}
             className={s.ava}
-            status={`${Coin() === true ? `online` : ""}`}
+            status={human.status}
           />
-          <span className={s.name}>{human}</span>
+          <span className={s.name}>{human.name}</span>
         </div>
       ))}
     </div>
