@@ -2,7 +2,9 @@ const Coin = () =>
   Math.floor(Math.random() * Math.floor(2)) === 0 ? true : false;
 
 const ADD_POST = "ADD-POST";
+const ADD_MESSAGE = "ADD-MESSAGE";
 const UPDATE_NEW_POST = "UPDATE-NEW-POST";
+const UPDATE_NEW_MESSAGE = "UPDATE-NEW-MESSAGE";
 
 let store = {
   _state: {
@@ -72,6 +74,7 @@ let store = {
       },
     ],
     newPost: "",
+    newMessage: "",
   },
 
   _callSubscriber() {},
@@ -85,30 +88,71 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === "ADD-POST") {
+    if (action.type === ADD_POST) {
       let date = new Date();
-      let postTime = date.getHours() + ":" + date.getMinutes();
 
+      let currentHours =
+        date.getHours() <= 9 ? "0" + date.getHours() : date.getHours();
+      let currentMinutes =
+        date.getMinutes().length <= 9
+          ? "0" + date.getMinutes()
+          : date.getMinutes();
+
+      let currentTime = currentHours + ":" + currentMinutes;
       let newPost = {
         id: 5,
         text: this._state.newPost.replace(/\s+/g, " ").trim(),
-        time: postTime,
+        time: currentTime,
       };
 
       this._state.posts.push(newPost);
       this._state.newPost = "";
       this._callSubscriber(this._state);
-    } else if (action.type === "UPDATE-NEW-POST") {
+    } else if (action.type === ADD_MESSAGE) {
+      let date = new Date();
+
+      let currentHours =
+        date.getHours() <= 9 ? "0" + date.getHours() : date.getHours();
+      let currentMinutes =
+        date.getMinutes().length <= 9
+          ? "0" + date.getMinutes()
+          : date.getMinutes();
+
+      let currentTime = currentHours + ":" + currentMinutes;
+
+      let newMessage = {
+        text: this._state.newMessage,
+        time: currentTime,
+        pos: "r",
+        humanID: "2",
+      };
+
+      this._state.messages.push(newMessage);
+      this._state.newMessage = "";
+
+      this._callSubscriber(this._state);
+    } else if (action.type === UPDATE_NEW_POST) {
       this._state.newPost = action.newPost;
+      this._callSubscriber(this._state);
+    } else if (action.type === UPDATE_NEW_MESSAGE) {
+      this._state.newMessage = action.newMessage;
       this._callSubscriber(this._state);
     }
   },
 };
 
-export const addPostActionCreator = () => ({ type: ADD_POST });
+export const addPostCreator = () => ({ type: ADD_POST });
 
-export const updatePostActionCreator = (text) => ({
+export const updatePostCreator = (text) => ({
   type: UPDATE_NEW_POST,
   newPost: text,
 });
+
+export const addMessageCreator = () => ({ type: ADD_MESSAGE });
+
+export const updateMessageCreator = (text) => ({
+  type: UPDATE_NEW_MESSAGE,
+  newMessage: text,
+});
+
 export default store;

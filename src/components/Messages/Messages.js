@@ -7,7 +7,11 @@ const Messages = (props) => (
   <div className={s.messages}>
     <span className={s.title}>Your messages</span>
     <Contacts humans={props.contacts} />
-    <Chat msgs={props.messages} />
+    <Chat
+      messages={props.messages}
+      newMessage={props.newMessage}
+      dispatch={props.dispatch}
+    />
   </div>
 );
 

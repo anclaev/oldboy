@@ -9,10 +9,7 @@ import Post from "./Post";
 import Textbox from "../Elems/Textbox";
 import SendButton from "../Elems/SendButton";
 
-import {
-  addPostActionCreator,
-  updatePostActionCreator,
-} from "../../redux/state.js";
+import { addPostCreator, updatePostCreator } from "../../redux/state";
 
 const Me = (props) => {
   let posts = props.posts.map((el) => (
@@ -23,13 +20,13 @@ const Me = (props) => {
 
   const addPost = () => {
     if (props.newPost.replace(/\s+/g, " ").trim() !== "") {
-      props.dispatch(addPostActionCreator());
+      props.dispatch(addPostCreator());
     }
   };
 
   const changePost = () => {
     let text = newPost.current.value;
-    props.dispatch(updatePostActionCreator(text));
+    props.dispatch(updatePostCreator(text));
   };
 
   return (

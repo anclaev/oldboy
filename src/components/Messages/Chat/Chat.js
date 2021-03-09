@@ -5,25 +5,49 @@ import ChatMessage from "./ChatMessage";
 import Textbox from "../../Elems/Textbox";
 import SendButton from "../../Elems/SendButton";
 
+import { updateMessageCreator, addMessageCreator } from "../../../redux/state";
+
 const Chat = (props) => {
-  let msgs = props.msgs.map((el) => (
+  let messages = props.messages.map((el) => (
     <ChatMessage text={el.text} time={el.time} pos={el.pos} />
   ));
 
-  let msgText = React.createRef();
+  const newMessage = React.createRef();
 
-  let AddMsg = () => {
-    alert(msgText.current.value);
+  const addMessage = () => {
+    if (props.newMessage.replace(/\s+/g, " ").trim() !== "") {
+      props.dispatch(addMessageCreator());
+    }
+
+    const chat = document.getElementById("scroll");
+
+    let int = setInterval(() => {
+      if (chat !== null) {
+        chat.scrollTop = chat.scrollHeight;
+        console.log(chat.scrollTop + " " + chat.scrollHeight);
+      }
+      clearInterval(int);
+    }, 0);
+  };
+
+  const changeMessage = (e) => {
+    let text = newMessage.current.value;
+    props.dispatch(updateMessageCreator(text));
   };
 
   return (
     <div className={s.chat}>
-      <div className={s.wrapper}>
-        <div className={s.messages}>{msgs}</div>
+      <div className={s.wrapper} id="scroll">
+        <div className={s.messages}>{messages}</div>
       </div>
       <div className={s.new}>
-        <Textbox placeholder="Send Sasha a new message..." refVal={msgText} />
-        <SendButton click={AddMsg} />
+        <Textbox
+          placeholder="Send Sasha a new message..."
+          refVal={newMessage}
+          defVal={props.newMessage}
+          change={changeMessage}
+        />
+        <SendButton click={addMessage} />
       </div>
     </div>
   );

@@ -29,6 +29,8 @@ const App = (props) => (
           <Messages
             contacts={props.state.humans}
             messages={props.state.messages}
+            newMessage={props.state.newMessage}
+            dispatch={props.dispatch}
           />
         )}
       />
