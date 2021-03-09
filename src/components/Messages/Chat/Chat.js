@@ -24,7 +24,6 @@ const Chat = (props) => {
     let int = setInterval(() => {
       if (chat !== null) {
         chat.scrollTop = chat.scrollHeight;
-        console.log(chat.scrollTop + " " + chat.scrollHeight);
       }
       clearInterval(int);
     }, 0);
