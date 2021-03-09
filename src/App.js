@@ -17,8 +17,8 @@ const App = (props) => (
         path="/me"
         render={() => (
           <Me
-            posts={props.state.posts}
-            newPost={props.state.newPost}
+            posts={props.state.posts.data}
+            new={props.state.posts.new}
             dispatch={props.dispatch}
           />
         )}
@@ -28,8 +28,8 @@ const App = (props) => (
         render={() => (
           <Messages
             contacts={props.state.humans}
-            messages={props.state.messages}
-            newMessage={props.state.newMessage}
+            messages={props.state.messages.data}
+            new={props.state.messages.new}
             dispatch={props.dispatch}
           />
         )}

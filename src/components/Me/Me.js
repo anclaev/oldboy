@@ -19,13 +19,14 @@ const Me = (props) => {
   const newPost = React.createRef();
 
   const addPost = () => {
-    if (props.newPost.replace(/\s+/g, " ").trim() !== "") {
+    if (props.new.replace(/\s+/g, " ").trim() !== "") {
       props.dispatch(addPostCreator());
     }
   };
 
   const changePost = () => {
     let text = newPost.current.value;
+
     props.dispatch(updatePostCreator(text));
   };
 
@@ -52,7 +53,7 @@ const Me = (props) => {
           <Textbox
             placeholder="How are you, old boy?"
             refVal={newPost}
-            defVal={props.newPost}
+            defVal={props.new}
             change={changePost}
           />
           <SendButton click={addPost} />
