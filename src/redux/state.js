@@ -1,6 +1,9 @@
 const Coin = () =>
   Math.floor(Math.random() * Math.floor(2)) === 0 ? true : false;
 
+const ADD_POST = "ADD-POST";
+const UPDATE_NEW_POST = "UPDATE-NEW-POST";
+
 let store = {
   _state: {
     humans: [
@@ -70,11 +73,13 @@ let store = {
     ],
     newPost: "",
   },
+
   _callSubscriber() {},
 
   getState() {
     return this._state;
   },
+
   subscribe(observer) {
     this._callSubscriber = observer;
   },
@@ -100,4 +105,10 @@ let store = {
   },
 };
 
+export const addPostActionCreator = () => ({ type: ADD_POST });
+
+export const updatePostActionCreator = (text) => ({
+  type: UPDATE_NEW_POST,
+  newPost: text,
+});
 export default store;
