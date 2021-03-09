@@ -2,8 +2,8 @@ import s from "./sendButton.module.sass";
 
 import Icon from "../Icons";
 
-const SendButton = () => (
-  <button className={s.send}>
+const SendButton = (props) => (
+  <button className={s.send} onClick={props.click}>
     <Icon className={s.icon} name="Send" />
   </button>
 );

@@ -1,3 +1,4 @@
+import React from "react";
 import s from "./me.module.scss";
 
 import Pic from "../Elems/Pic";
@@ -12,6 +13,12 @@ const Me = (props) => {
   let posts = props.posts.map((el) => (
     <Post className={s.posts__item} text={el.text} time={el.time} />
   ));
+
+  let postText = React.createRef();
+
+  let AddPost = () => {
+    alert(postText.current.value);
+  };
 
   return (
     <div className={s.me}>
@@ -33,8 +40,8 @@ const Me = (props) => {
       </div>
       <div className={s.posts}>
         <div className={s.new}>
-          <Textbox placeholder="How are you, old boy?" />
-          <SendButton />
+          <Textbox placeholder="How are you, old boy?" refVal={postText} />
+          <SendButton click={AddPost} />
         </div>
         <div className={s.wrapper}>{posts}</div>
       </div>
