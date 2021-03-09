@@ -13,7 +13,7 @@ const Random = (max) => Math.floor(Math.random() * Math.floor(max));
 
 const Coin = () => (Random(2) === 0 ? true : false);
 
-let Humans = [
+let humans = [
   {
     id: 1,
     name: "Andrew",
@@ -44,15 +44,55 @@ let Humans = [
   },
 ];
 
+let posts = [
+  { id: 1, text: "How stupid that is.", time: "March 4, 19:35" },
+  { id: 2, text: "Hey, what are you doing?", time: "March 4, 19:37" },
+];
+
+let messages = [
+  { text: "Hi, whats up?", time: "20:35", pos: "l", humanID: "1" },
+
+  {
+    text: "Not bad. Got a job. How are you?",
+    time: "20:37",
+    pos: "r",
+    humanID: "1",
+  },
+
+  {
+    text: "Very good! I'm getting married soon! You're invited!",
+    time: "20:40",
+    pos: "l",
+    humanID: "1",
+  },
+
+  {
+    text: "Wow, cool! When will the wedding be?",
+    time: "20:45",
+    pos: "r",
+    humanID: "1",
+  },
+
+  {
+    text: "March 17, 12:00, Yekaterinburg. The dress code is a white tie.",
+    time: "21:00",
+    pos: "l",
+    humanID: "1",
+  },
+];
+
 const App = () => (
   <BrowserRouter>
     <div className="app-wrapper">
       <Header title="Old Boy" />
       <Menu items={["Me", "Messages", "News", "Music"]} />
-      <Friends className="friends" humans={Humans} />
+      <Friends className="friends" humans={humans} />
 
-      <Route component={Me} path="/me" />
-      <Route component={Messages} path="/messages" />
+      <Route path="/me" render={() => <Me posts={posts} />} />
+      <Route
+        path="/messages"
+        render={() => <Messages contacts={humans} messages={messages} />}
+      />
     </div>
   </BrowserRouter>
 );
