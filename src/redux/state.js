@@ -114,9 +114,7 @@ let store = {
       let currentHours =
         date.getHours() <= 9 ? "0" + date.getHours() : date.getHours();
       let currentMinutes =
-        date.getMinutes().length <= 9
-          ? "0" + date.getMinutes()
-          : date.getMinutes();
+        date.getMinutes() <= 9 ? "0" + date.getMinutes() : date.getMinutes();
 
       let currentTime = currentHours + ":" + currentMinutes;
 

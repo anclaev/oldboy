@@ -19,11 +19,11 @@ const Chat = (props) => {
       props.dispatch(addMessageCreator());
     }
 
-    const chat = document.getElementById("scroll");
+    const scroll = document.getElementById("scroll");
 
     let int = setInterval(() => {
-      if (chat !== null) {
-        chat.scrollTop = chat.scrollHeight;
+      if (scroll !== null) {
+        scroll.scrollTop = scroll.scrollHeight;
       }
       clearInterval(int);
     }, 0);
