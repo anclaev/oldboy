@@ -69,4 +69,17 @@ let state = {
   ],
 };
 
+export const AddPost = (postMessage) => {
+  let date = new Date();
+  let postTime = date.getHours() + ":" + date.getMinutes();
+
+  let newPost = {
+    id: 5,
+    text: postMessage,
+    time: postTime,
+  };
+
+  state.posts.push(newPost);
+};
+
 export default state;

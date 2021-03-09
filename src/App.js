@@ -16,7 +16,10 @@ const App = (props) => (
       <Menu items={["Me", "Messages", "News", "Music"]} />
       <Friends className="friends" humans={props.state.humans} />
 
-      <Route path="/me" render={() => <Me posts={props.state.posts} />} />
+      <Route
+        path="/me"
+        render={() => <Me posts={props.state.posts} addPost={props.addPost} />}
+      />
       <Route
         path="/messages"
         render={() => (
