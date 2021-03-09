@@ -6,6 +6,40 @@ const ADD_MESSAGE = "ADD-MESSAGE";
 const UPDATE_NEW_POST = "UPDATE-NEW-POST";
 const UPDATE_NEW_MESSAGE = "UPDATE-NEW-MESSAGE";
 
+const Months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const currentTime = () => {
+  let date = new Date();
+
+  let currentHours =
+    date.getHours() <= 9 ? "0" + date.getHours() : date.getHours();
+  let currentMinutes =
+    date.getMinutes() <= 9 ? "0" + date.getMinutes() : date.getMinutes();
+
+  return currentHours + ":" + currentMinutes;
+};
+
+const currentDate = () => {
+  let date = new Date();
+  let currentMonth = Months[date.getMonth()];
+  let currentDay = date.getDate();
+
+  return currentMonth + " " + currentDay + ", " + currentTime();
+};
+
 let store = {
   _state: {
     humans: [
@@ -88,53 +122,49 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === ADD_POST) {
-      let date = new Date();
+    switch (action.type) {
+      case ADD_POST:
+        {
+          let newPost = {
+            id: 5,
+            text: this._state.newPost.replace(/\s+/g, " ").trim(),
+            time: currentDate(),
+          };
 
-      let currentHours =
-        date.getHours() <= 9 ? "0" + date.getHours() : date.getHours();
-      let currentMinutes =
-        date.getMinutes().length <= 9
-          ? "0" + date.getMinutes()
-          : date.getMinutes();
+          this._state.posts.push(newPost);
+          this._state.newPost = "";
+          this._callSubscriber(this._state);
+        }
+        break;
 
-      let currentTime = currentHours + ":" + currentMinutes;
-      let newPost = {
-        id: 5,
-        text: this._state.newPost.replace(/\s+/g, " ").trim(),
-        time: currentTime,
-      };
+      case ADD_MESSAGE:
+        {
+          let newMessage = {
+            text: this._state.newMessage,
+            time: currentTime(),
+            pos: "r",
+            humanID: "2",
+          };
 
-      this._state.posts.push(newPost);
-      this._state.newPost = "";
-      this._callSubscriber(this._state);
-    } else if (action.type === ADD_MESSAGE) {
-      let date = new Date();
+          this._state.messages.push(newMessage);
+          this._state.newMessage = "";
 
-      let currentHours =
-        date.getHours() <= 9 ? "0" + date.getHours() : date.getHours();
-      let currentMinutes =
-        date.getMinutes() <= 9 ? "0" + date.getMinutes() : date.getMinutes();
+          this._callSubscriber(this._state);
+        }
+        break;
 
-      let currentTime = currentHours + ":" + currentMinutes;
+      case UPDATE_NEW_POST:
+        this._state.newPost = action.newPost;
+        this._callSubscriber(this._state);
+        break;
 
-      let newMessage = {
-        text: this._state.newMessage,
-        time: currentTime,
-        pos: "r",
-        humanID: "2",
-      };
+      case UPDATE_NEW_MESSAGE:
+        this._state.newMessage = action.newMessage;
+        this._callSubscriber(this._state);
+        break;
 
-      this._state.messages.push(newMessage);
-      this._state.newMessage = "";
-
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST) {
-      this._state.newPost = action.newPost;
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_MESSAGE) {
-      this._state.newMessage = action.newMessage;
-      this._callSubscriber(this._state);
+      default:
+        break;
     }
   },
 };
