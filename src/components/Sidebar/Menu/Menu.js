@@ -4,7 +4,7 @@ import Icon from "../../Elems/Icons";
 import { NavLink } from "react-router-dom";
 
 const Menu = (props) => (
-  <div className={s.menu}>
+  <div className={`${props.name} ${s.menu}`}>
     <span className={s.title}>Menu</span>
     <div className={s.list}>
       {props.items.map((item) => (

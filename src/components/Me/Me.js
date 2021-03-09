@@ -17,7 +17,12 @@ const Me = (props) => {
   let postText = React.createRef();
 
   let AddPost = () => {
-    props.addPost(postText.current.value);
+    let text = postText.current.value.replace(/\s+/g, " ").trim();
+
+    if (text !== "") {
+      props.addPost(text);
+      postText.current.value = "";
+    }
   };
 
   return (
