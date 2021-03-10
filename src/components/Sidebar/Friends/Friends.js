@@ -6,8 +6,8 @@ const Friends = (props) => (
   <div className={`${props.name} ${s.friends}`}>
     <div className={s.title}>Friends</div>
     <div className={s.wrapper}>
-      {props.humans.map((human) => (
-        <div className={s.human}>
+      {props.humans.map((human, key) => (
+        <div className={s.human} key={key}>
           <Pic
             img={`${human.name.toLowerCase()}.png`}
             className={s.ava}

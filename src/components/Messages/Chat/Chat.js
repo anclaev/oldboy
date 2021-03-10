@@ -11,8 +11,8 @@ import {
 } from "../../../redux/reducers";
 
 const Chat = (props) => {
-  let messages = props.messages.map((el) => (
-    <ChatMessage text={el.text} time={el.time} pos={el.pos} />
+  let messages = props.messages.map((el, key) => (
+    <ChatMessage text={el.text} time={el.time} pos={el.pos} key={key} />
   ));
 
   const newMessage = React.createRef();

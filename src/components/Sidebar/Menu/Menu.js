@@ -7,8 +7,8 @@ const Menu = (props) => (
   <div className={`${props.name} ${s.menu}`}>
     <span className={s.title}>Menu</span>
     <div className={s.list}>
-      {props.items.map((item) => (
-        <div className={s.item}>
+      {props.items.map((item, key) => (
+        <div className={s.item} key={key}>
           <Icon name={item} className={s.icon} />
           <NavLink
             to={`/${item.toLowerCase()}`}

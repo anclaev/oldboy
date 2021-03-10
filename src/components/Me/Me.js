@@ -12,8 +12,8 @@ import SendButton from "../Elems/SendButton";
 import { addPostCreator, updatePostCreator } from "../../redux/reducers";
 
 const Me = (props) => {
-  let posts = props.posts.map((el) => (
-    <Post className={s.posts__item} text={el.text} time={el.time} />
+  let posts = props.posts.map((el, key) => (
+    <Post className={s.posts__item} text={el.text} time={el.time} key={key} />
   ));
 
   const newPost = React.createRef();
