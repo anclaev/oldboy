@@ -4,4 +4,4 @@ Social Club of Old Boy.
 
 ## Stack
 
-React, SASS/SCSS (CSS Grid, Flex).
+React, Redux, SASS/SCSS, CSS Grid.
