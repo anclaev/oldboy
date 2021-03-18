@@ -3,7 +3,9 @@ import s from "./pic.module.sass";
 const Pic = (props) => {
   let classes = `${props.className !== undefined ? props.className : ""} ${
     s.pic
-  } ${props.status === "online" ? s.online : ""}`;
+  } ${props.status === "online" ? s.online : ""} ${
+    props.outline === "true" ? s.outline : ""
+  }`;
   return (
     <div
       className={classes}

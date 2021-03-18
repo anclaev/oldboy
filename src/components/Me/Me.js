@@ -33,7 +33,7 @@ const Me = (props) => {
   return (
     <div className={s.me}>
       <Pic className={s.bg} img="profile-bg.jpg" />
-      <Pic className={s.ava} img="profile-ava.jpg" />
+      <Pic className={s.ava} outline="true" img="profile-ava.jpg" />
       <div className={s.info}>
         <div className={s.name}>Artem Samarin</div>
         <div className={s.props}>
