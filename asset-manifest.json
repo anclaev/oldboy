@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/oldboy/static/css/main.bd180cd4.chunk.css",
-    "main.js": "/oldboy/static/js/main.e0d33a42.chunk.js",
-    "main.js.map": "/oldboy/static/js/main.e0d33a42.chunk.js.map",
+    "main.js": "/oldboy/static/js/main.b59837b2.chunk.js",
+    "main.js.map": "/oldboy/static/js/main.b59837b2.chunk.js.map",
     "runtime-main.js": "/oldboy/static/js/runtime-main.ad8091ec.js",
     "runtime-main.js.map": "/oldboy/static/js/runtime-main.ad8091ec.js.map",
     "static/js/2.f1c21357.chunk.js": "/oldboy/static/js/2.f1c21357.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ad8091ec.js",
     "static/js/2.f1c21357.chunk.js",
     "static/css/main.bd180cd4.chunk.css",
-    "static/js/main.e0d33a42.chunk.js"
+    "static/js/main.b59837b2.chunk.js"
   ]
 }
