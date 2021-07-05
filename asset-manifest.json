@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/oldboy/static/css/main.bd180cd4.chunk.css",
+    "main.js": "/oldboy/static/js/main.e0d33a42.chunk.js",
+    "main.js.map": "/oldboy/static/js/main.e0d33a42.chunk.js.map",
+    "runtime-main.js": "/oldboy/static/js/runtime-main.ad8091ec.js",
+    "runtime-main.js.map": "/oldboy/static/js/runtime-main.ad8091ec.js.map",
+    "static/js/2.f1c21357.chunk.js": "/oldboy/static/js/2.f1c21357.chunk.js",
+    "static/js/2.f1c21357.chunk.js.map": "/oldboy/static/js/2.f1c21357.chunk.js.map",
+    "index.html": "/oldboy/index.html",
+    "static/css/main.bd180cd4.chunk.css.map": "/oldboy/static/css/main.bd180cd4.chunk.css.map",
+    "static/js/2.f1c21357.chunk.js.LICENSE.txt": "/oldboy/static/js/2.f1c21357.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/oldboy/static/media/app-bg.80814bf6.png",
+    "static/media/icons.db52c71c.svg": "/oldboy/static/media/icons.db52c71c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ad8091ec.js",
+    "static/js/2.f1c21357.chunk.js",
+    "static/css/main.bd180cd4.chunk.css",
+    "static/js/main.e0d33a42.chunk.js"
+  ]
+}
